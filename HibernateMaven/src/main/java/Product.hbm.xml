@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.rs.hibernate.core.example.Product" table="PRODUCTS5">
+
+<id name="productId" column="pid"  >
+<generator class="increment" /> 
+</id>
+<!-- <version name="version" column="ver" />  -->
+<!-- <composite-id>
+<key-property name="productId" column="pid"  />
+<key-property name="proName" column="pname" length="10"/>
+</composite-id> -->
+<property name="proName" column="pname" /> 
+<property name="price"/>
+
+
+
+
+</class>
+
+<query name="Myquery">
+<![CDATA[from Product p where p.price>:java4s ]]>
+</query>
+</hibernate-mapping>
